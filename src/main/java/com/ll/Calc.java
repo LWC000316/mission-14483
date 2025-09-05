@@ -2,16 +2,19 @@ package com.ll;
 
 public class Calc {
     public static int run(String str) {
+        int result = 0;
+
         // 공백 제거
         str = str.replace(" ", "");
 
-        // '+' 연산자로 분리
-        String[] parts = str.split("\\+");
+        // 피연산자 분리
+        String[] operands = str.split("\\+");
 
-        int result = 0;
-        for (String part : parts) {
-            result += Integer.parseInt(part);
+        // 계산
+        for (String operand : operands) {
+            result += Integer.parseInt(operand);
         }
+
         return result;
     }
 }
